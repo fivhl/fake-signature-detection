@@ -4,6 +4,16 @@ import cv2
 import numpy as np
 from skimage.feature import hog
 
+@app.route("/predict", methods=["GET", "POST"])
+def predict():
+    if request.method == "GET":
+        return "This endpoint only accepts POST requests with a file."
+
+    if 'file' not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+
+    # ادامه‌ی کد برای پیش‌بینی...
+
 # Load the model, scaler, and PCA
 model, scaler, pca = joblib.load("model2.pkl")
 
