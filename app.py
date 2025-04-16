@@ -4,6 +4,8 @@ import cv2
 import numpy as np
 from skimage.feature import hog
 
+app = Flask(__name__)
+
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
     if request.method == "GET":
